@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
 @EnableAutoConfiguration
-@ComponentScan("com.example.demo.controller")
+@ComponentScan(basePackages = {"com.example.demo.controller","com.example.demo.service"})
 public class DemoApplication {
     public static void main(String[] args) {
         System.out.println("this is a good boy");
