@@ -58,6 +58,18 @@ public class UserService {
     }
 
     /**
+     * @Description: 根据主键删除用户
+     * @Param: [id]
+     * @return: int
+     * @Author: dbstar
+     * @Date: 2018/4/28 下午11:18
+     **/
+    public int deleteUser(Integer id) {
+        int result = jdbcTemplate.update("delete from users where id = ?", new Object[]{id});
+        return result;
+    }
+
+    /**
      * 行映射
      */
     class UserRowMapper implements RowMapper<User> {
