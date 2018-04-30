@@ -33,6 +33,10 @@
                 ${userList!"用户列表为空"}
             </#if>
             <#break>
+            <#case "updateUser">
+            修改用户成功</br>
+            影响的行数为:${result}
+                <#break>
     </#switch>
 
 </center>

@@ -64,6 +64,13 @@ public class UserController {
         return mav;
     }
 
+    /**
+     * @Description: 根据主键删除用户
+     * @Param: [id, method]
+     * @return: org.springframework.web.servlet.ModelAndView
+     * @Author: dbstar
+     * @Date: 2018/4/30 上午11:26
+     **/
     @RequestMapping("/deleteUserById/{method}")
     public ModelAndView deleteUser(Integer id, @PathVariable String method) {
         int i = userService.deleteUser(id);
@@ -74,5 +81,23 @@ public class UserController {
         return mav;
     }
 
+    /**
+     * @Description: 根据主键删除用户
+     * @Param: [method, id, name, age]
+     * @return: org.springframework.web.servlet.ModelAndView
+     * @Author: dbstar
+     * @Date: 2018/4/30 上午11:54
+     **/
+    @RequestMapping("/updateUserById/{method}/{id}/{name}/{age}")
+    public ModelAndView updateUserById(@PathVariable String method, @PathVariable Integer id, @PathVariable String name, @PathVariable Integer age) {
+        int i = userService.updateUser(id, name, age);
+        System.out.println("影响的行数为:" + i);
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("method", method);
+        mav.addObject("result",i);
+        mav.setViewName("user/user");
+        return mav;
+
+    }
 
 }

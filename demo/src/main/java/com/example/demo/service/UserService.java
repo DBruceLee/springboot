@@ -70,6 +70,18 @@ public class UserService {
     }
 
     /**
+     * @Description: 根据主键修改用户
+     * @Param: [id, name, age]
+     * @return: int
+     * @Author: dbstar
+     * @Date: 2018/4/30 上午11:48
+     **/
+    public int updateUser(Integer id, String name, Integer age) {
+        int result = jdbcTemplate.update("update users set name=?, age = ? where id = ?", name, age, id);
+        return result;
+    }
+
+    /**
      * 行映射
      */
     class UserRowMapper implements RowMapper<User> {
