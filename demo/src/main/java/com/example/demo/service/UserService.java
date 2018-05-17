@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService {
@@ -44,6 +45,20 @@ public class UserService {
         System.out.println(user);
         return user;
     }
+
+    /**
+     * @Description: 根据name查找用户
+     * @Param: [name]
+     * @return: com.example.demo.entity.User
+     * @Author: dbstar
+     * @Date: 2018/5/17 下午5:39
+     **/
+    public List<User> findUserByName(String userName) {
+        List<User> userList = jdbcTemplate.query("select * from users where name = ?", new Object[]{userName}, new UserRowMapper());
+        userList = userList.stream().filter(x -> x.getName().equalsIgnoreCase(userName)).collect(Collectors.toList());
+        return userList;
+    }
+
 
     /**
      * @Description: 返回用户列表所有信息

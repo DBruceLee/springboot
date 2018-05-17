@@ -6,6 +6,9 @@
 </head>
 <body>
 <center>
+<#if test??>
+    ${test}
+</#if>
     <#switch method>
         <#case "save">
         新增用户成功</br>
