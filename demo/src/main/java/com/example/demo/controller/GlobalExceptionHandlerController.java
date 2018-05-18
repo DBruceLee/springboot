@@ -30,7 +30,7 @@ public class GlobalExceptionHandlerController {
             map.put("errorCode", 500);
             map.put("errorMsg", "未知异常");
         }
-        System.out.println("you are a good boy");
+        System.out.println("you are assssss good boy");
         return map;
     }
 
