@@ -88,7 +88,7 @@ public class UserController {
      * @Date: 2018/5/17 下午6:06
      **/
     @PostMapping("/api/search")
-    public ResponseEntity<?> getSearchResultViaAjax(@Valid @RequestBody SearchCriteria search, Errors errors) {
+    public ResponseEntity<?> getSearchResultViaAjax(@Valid @RequestBody SearchCriteria search,Errors errors,@RequestHeader("Accept-Encoding") String encoder) {
 
         AjaxResponseBody result = new AjaxResponseBody();
 
@@ -106,6 +106,7 @@ public class UserController {
         } else {
             result.setMsg("success");
         }
+        result.setEncoder(encoder);
         result.setResult(users);
 
         return ResponseEntity.ok(result);

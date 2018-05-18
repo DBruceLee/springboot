@@ -13,5 +13,5 @@ public class SearchCriteria {
     public void setUsername(String username) {
         this.username = username;
     }
-    
+
 }

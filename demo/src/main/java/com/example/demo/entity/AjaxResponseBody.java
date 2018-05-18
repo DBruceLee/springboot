@@ -4,7 +4,7 @@ import java.util.List;
 
 public class AjaxResponseBody {
     String msg;
-//    String mothod;
+    String encoder;
     List<User> result;
 
     public String getMsg() {
@@ -23,11 +23,11 @@ public class AjaxResponseBody {
         this.result = result;
     }
 
-//    public String getMothod() {
-//        return mothod;
-//    }
-//
-//    public void setMothod(String mothod) {
-//        this.mothod = mothod;
-//    }
+    public String getEncoder() {
+        return encoder;
+    }
+
+    public void setEncoder(String encoder) {
+        this.encoder = encoder;
+    }
 }
