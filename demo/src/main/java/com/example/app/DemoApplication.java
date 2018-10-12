@@ -12,7 +12,8 @@ public class DemoApplication {
         System.out.println("this is a good boy");
         System.out.println("niaho ");
         System.out.println("niaho ");
-        System.out.println("niaho ");
+
+
         System.out.println("niaho ");
         SpringApplication.run(DemoApplication.class, args);
     }
